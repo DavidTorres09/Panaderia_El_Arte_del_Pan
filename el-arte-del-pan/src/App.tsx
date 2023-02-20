@@ -1,11 +1,9 @@
-import React from 'react';
-import Griddb from './Components/Grid_DB/griddb';
+import React from 'react'; 
 import SideBar from './Components/SideBar/SideBar';
 
 const App = () => {
   return (
-    <div>
-      <Griddb />
+    <div> 
       <SideBar/>
     </div>
   );
