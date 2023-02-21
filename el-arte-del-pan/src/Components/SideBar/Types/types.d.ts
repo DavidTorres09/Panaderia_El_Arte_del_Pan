@@ -1,13 +1,13 @@
 import { IconType } from "react-icons";
 
-export interface SideBarMenuItem{
+export interface SideBarItem{
     id: string;
     label: string;
     icon: IconType;
     url: string;
 }
 
-export interface SideBarMenuCard{
+export interface SideBarCard{
     id: string;
     displayName: string;
     photoUrl: string;

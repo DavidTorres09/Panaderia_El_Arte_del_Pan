@@ -1,8 +1,27 @@
-import React from 'react'
+import { SideBarItem } from "../SideBar/Types/types"
+import { classNames } from "../../assets/Util/classes"
+import "./SideBarItemView.scss"
 
-export const SideBarItemView = () => {
-  return (
-    <div>SideBarItemView</div>
-  )
+interface SideBarItemViewProps {
+    item: SideBarItem,
+    isOpen: boolean;
 }
-export default SideBarItemView
+
+export default function SideBarItemView({
+    item,
+    isOpen,
+}: SideBarItemViewProps) {
+    return (
+        <div className="SideBarItemView">
+            <a href={item.url}>
+                <div className={classNames("ItemContent", isOpen ? "" : "collapsed")}>
+                    <div className="icon">
+                        <item.icon size="33" />
+                    </div>
+                    <span className="label">{item.label}</span>
+                </div>
+            </a>
+            {!isOpen ? <div className="tooltip">{item.label}</div> : ""}
+        </div>
+    )
+}
